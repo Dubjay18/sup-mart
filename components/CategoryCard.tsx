@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Dimensions, Pressable, View } from 'react-native';
+import { Image, Dimensions, Pressable, View, TouchableOpacity } from 'react-native';
 import { Category } from '~/constants/mock_data';
 import ThemeText from './ThemeText';
 import { useThemeStore } from '~/store/store';
@@ -10,7 +10,7 @@ var { width, height } = Dimensions.get('window');
 const CategoryCard = ({ category, onPress }: { category: Category; onPress?: () => void }) => {
   const theme = useThemeStore((state) => state.theme);
   return (
-    <Pressable
+    <TouchableOpacity
       className="rounded-lg pb-4"
       style={{
         backgroundColor: Colors[theme].foreground,
@@ -26,7 +26,7 @@ const CategoryCard = ({ category, onPress }: { category: Category; onPress?: () 
       <View className="flex flex-row items-center justify-center py-3">
         <ThemeText className="text-xl">{category.name}</ThemeText>
       </View>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

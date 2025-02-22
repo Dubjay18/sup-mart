@@ -29,6 +29,7 @@ const ThemeInput = React.forwardRef<TextInput, ThemeInputProps>(
         {...props}
         ref={ref}
         style={[inputStyle.input, style]}
+        className="font-pregular"
         placeholderTextColor={Colors[theme].inputPlaceholder}
       />
     );
