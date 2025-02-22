@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import CategoriesGrid from '~/components/CategoriesGrid';
 import { Container } from '~/components/Container';
+import FeaturedSection from '~/components/home/FeaturedSection';
 import HomeHeader from '~/components/HomeHeader';
 import SearchInput from '~/components/SearchInput';
 import ThemeView from '~/components/ThemeView';
@@ -15,6 +16,7 @@ const Home = () => {
       <Container>
         <HomeHeader name="Jin woo" />
         <SearchInput />
+        <FeaturedSection />
       </Container>
       <View style={{ height: 10, width: 10 }} />
       <StatusBar style={theme != 'light' ? 'light' : 'dark'} />
