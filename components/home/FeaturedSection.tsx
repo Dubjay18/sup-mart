@@ -40,39 +40,38 @@ const FeaturedSection = () => {
   return (
     <ThemeView>
       <ThemeText className="my-4 font-psemibold text-xl">Featured</ThemeText>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <FlatList
-          data={MOCK_FEATURED}
-          horizontal
-          renderItem={({
-            item,
-          }: {
-            item: {
-              id: string;
-              name: string;
-              imageUrl: any;
-              price: number;
-              onPress: () => void;
-            };
-          }) => (
-            <View
-              className=""
-              style={{
-                width: 200,
-                padding: 10,
-                height: 300,
-              }}>
-              <FeaturedCard
-                name={item.name}
-                price={item.price}
-                onPress={item.onPress}
-                imageUrl={item.imageUrl}
-              />
-            </View>
-          )}
-          keyExtractor={(item) => item.id}
-        />
-      </ScrollView>
+
+      <FlatList
+        data={MOCK_FEATURED}
+        horizontal
+        renderItem={({
+          item,
+        }: {
+          item: {
+            id: string;
+            name: string;
+            imageUrl: any;
+            price: number;
+            onPress: () => void;
+          };
+        }) => (
+          <View
+            className=""
+            style={{
+              width: 200,
+              padding: 10,
+              height: 300,
+            }}>
+            <FeaturedCard
+              name={item.name}
+              price={item.price}
+              onPress={item.onPress}
+              imageUrl={item.imageUrl}
+            />
+          </View>
+        )}
+        keyExtractor={(item) => item.id}
+      />
     </ThemeView>
   );
 };
