@@ -2,37 +2,7 @@ import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import ThemeText from '../ThemeText';
 import ProductCard from './ProductCard';
-
-const MOCK_PRODUCTS = [
-  {
-    id: '1',
-    name: 'Nike Air Max 270',
-    imageUrl: require('../../assets/categories/digital_service.png'),
-    price: 150,
-    onPress: () => {},
-  },
-  {
-    id: '2',
-    name: 'Adidas Yeezy 350',
-    imageUrl: require('../../assets/categories/digital_service.png'),
-    price: 250,
-    onPress: () => {},
-  },
-  {
-    id: '3',
-    name: 'Nike Air Max 270',
-    imageUrl: require('../../assets/categories/digital_service.png'),
-    price: 150,
-    onPress: () => {},
-  },
-  {
-    id: '4',
-    name: 'Adidas Yeezy 350',
-    imageUrl: require('../../assets/categories/digital_service.png'),
-    price: 250,
-    onPress: () => {},
-  },
-];
+import { MOCK_PRODUCTS } from '~/constants/mock_data';
 
 const AllSection = () => {
   return (

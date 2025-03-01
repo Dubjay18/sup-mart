@@ -13,7 +13,7 @@ const CartButton = () => {
       <View className="absolute right-0 top-0 flex h-4 w-4 items-center justify-center rounded-full bg-red-500">
         <Text className="text-xs text-white">1</Text>
       </View>
-      <AntDesign name="shoppingcart" size={24} color="white" />
+      <AntDesign name="shoppingcart" size={24} color={Colors[theme].text} />
     </TouchableOpacity>
   );
 };

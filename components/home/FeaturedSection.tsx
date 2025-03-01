@@ -4,6 +4,7 @@ import ThemeView from '../ThemeView';
 import ThemeText from '../ThemeText';
 
 import FeaturedCard from './FeaturedCard';
+import { useRouter } from 'expo-router';
 
 const MOCK_FEATURED = [
   {
@@ -37,6 +38,7 @@ const MOCK_FEATURED = [
 ];
 
 const FeaturedSection = () => {
+  const router = useRouter();
   return (
     <ThemeView>
       <ThemeText className="my-4 font-psemibold text-xl">Featured</ThemeText>
@@ -65,7 +67,9 @@ const FeaturedSection = () => {
             <FeaturedCard
               name={item.name}
               price={item.price}
-              onPress={item.onPress}
+              onPress={() => {
+                router.push(`/details?id=${item.id}`);
+              }}
               imageUrl={item.imageUrl}
             />
           </View>

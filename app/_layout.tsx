@@ -2,10 +2,12 @@ import { useEffect } from 'react';
 import '../global.css';
 import { SplashScreen, Stack } from 'expo-router';
 import { useFonts } from 'expo-font';
+import { useThemeStore } from '~/store/store';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 export default function Layout() {
+  const theme = useThemeStore((state) => state.theme);
   const [fontsLoaded, error] = useFonts({
     'Poppins-Black': require('../assets/fonts/Poppins-Black.ttf'),
     'Poppins-Bold': require('../assets/fonts/Poppins-Bold.ttf'),
@@ -37,6 +39,10 @@ export default function Layout() {
       <Stack.Screen options={{ title: 'Home' }} name="index" />
       <Stack.Screen options={{ headerShown: false }} name="(auth)" />
       <Stack.Screen options={{ headerShown: false }} name="(tabs)" />
+      <Stack.Screen
+        options={{ presentation: 'modal', gestureEnabled: true, headerShown: false }}
+        name="details"
+      />
     </Stack>
   );
 }

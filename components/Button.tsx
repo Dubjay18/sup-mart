@@ -3,16 +3,21 @@ import { Pressable, Text, TouchableOpacity, TouchableOpacityProps, View } from '
 import ThemeText from './ThemeText';
 
 type ButtonProps = {
-  title: string;
+  title?: string;
+  icon?: React.ReactNode;
 } & TouchableOpacityProps;
 
-export const Button = forwardRef<View, ButtonProps>(({ title, ...touchableProps }, ref) => {
+export const Button = forwardRef<View, ButtonProps>(({ title, icon, ...touchableProps }, ref) => {
   return (
     <Pressable
       ref={ref}
       {...touchableProps}
       className={`${styles.button} ${touchableProps.className}`}>
-      <ThemeText className={styles.buttonText}>{title}</ThemeText>
+      {icon ? (
+        <View className="mr-2">{icon}</View>
+      ) : (
+        <ThemeText className={styles.buttonText}>{title}</ThemeText>
+      )}
     </Pressable>
   );
 });
